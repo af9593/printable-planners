@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monthly Calendar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: white;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .container {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 48px;
+      background: white;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .header h1 {
+      font-size: 48px;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: #1f2937;
+      margin-bottom: 8px;
+    }
+
+    .calendar {
+      border: 1px solid #e5e7eb;
+    }
+
+    .day-headers {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      background: #f9fafb;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .day-header {
+      padding: 12px;
+      text-align: center;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+    }
+
+    .calendar-day {
+      border-right: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 12px;
+      min-height: 120px;
+      background: white;
+    }
+
+    .calendar-day:nth-child(7n) {
+      border-right: none;
+    }
+
+    .calendar-day:nth-last-child(-n+7) {
+      border-bottom: none;
+    }
+
+    .day-number {
+      font-size: 14px;
+      font-weight: 300;
+      color: #1f2937;
+      margin-bottom: 8px;
+    }
+
+    .notes-section {
+      margin-top: 32px;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 24px;
+    }
+
+    .notes-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #6b7280;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .notes-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .note-line {
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 12px;
+      min-height: 20px;
+    }
+
+    @media print {
+      .container {
+        padding: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>January 2025</h1>
+    </div>
+
+    <!-- Calendar -->
+    <div class="calendar">
+      <!-- Day Headers -->
+      <div class="day-headers">
+        <div class="day-header">Sun</div>
+        <div class="day-header">Mon</div>
+        <div class="day-header">Tue</div>
+        <div class="day-header">Wed</div>
+        <div class="day-header">Thu</div>
+        <div class="day-header">Fri</div>
+        <div class="day-header">Sat</div>
+      </div>
+
+      <!-- Calendar Grid (January 2025 starts on Wednesday) -->
+      <div class="calendar-grid">
+        <!-- Week 1 -->
+        <div class="calendar-day"><div class="day-number" style="color: #bdc3c7;">29</div></div>
+        <div class="calendar-day"><div class="day-number" style="color: #bdc3c7;">30</div></div>
+        <div class="calendar-day"><div class="day-number" style="color: #bdc3c7;">31</div></div>
+        <div class="calendar-day"><div class="day-number">1</div></div>
+        <div class="calendar-day"><div class="day-number">2</div></div>
+        <div class="calendar-day"><div class="day-number">3</div></div>
+        <div class="calendar-day"><div class="day-number">4</div></div>
+        
+        <!-- Week 2 -->
+        <div class="calendar-day"><div class="day-number">5</div></div>
+        <div class="calendar-day"><div class="day-number">6</div></div>
+        <div class="calendar-day"><div class="day-number">7</div></div>
+        <div class="calendar-day"><div class="day-number">8</div></div>
+        <div class="calendar-day"><div class="day-number">9</div></div>
+        <div class="calendar-day"><div class="day-number">10</div></div>
+        <div class="calendar-day"><div class="day-number">11</div></div>
+        
+        <!-- Week 3 -->
+        <div class="calendar-day"><div class="day-number">12</div></div>
+        <div class="calendar-day"><div class="day-number">13</div></div>
+        <div class="calendar-day"><div class="day-number">14</div></div>
+        <div class="calendar-day"><div class="day-number">15</div></div>
+        <div class="calendar-day"><div class="day-number">16</div></div>
+        <div class="calendar-day"><div class="day-number">17</div></div>
+        <div class="calendar-day"><div class="day-number">18</div></div>
+        
+        <!-- Week 4 -->
+        <div class="calendar-day"><div class="day-number">19</div></div>
+        <div class="calendar-day"><div class="day-number">20</div></div>
+        <div class="calendar-day"><div class="day-number">21</div></div>
+        <div class="calendar-day"><div class="day-number">22</div></div>
+        <div class="calendar-day"><div class="day-number">23</div></div>
+        <div class="calendar-day"><div class="day-number">24</div></div>
+        <div class="calendar-day"><div class="day-number">25</div></div>
+        
+        <!-- Week 5 -->
+        <div class="calendar-day"><div class="day-number">26</div></div>
+        <div class="calendar-day"><div class="day-number">27</div></div>
+        <div class="calendar-day"><div class="day-number">28</div></div>
+        <div class="calendar-day"><div class="day-number">29</div></div>
+        <div class="calendar-day"><div class="day-number">30</div></div>
+        <div class="calendar-day"><div class="day-number">31</div></div>
+        <div class="calendar-day"><div class="day-number" style="color: #bdc3c7;">1</div></div>
+      </div>
+    </div>
+
+    <!-- Notes Section -->
+    <div class="notes-section">
+      <div class="notes-title">Notes</div>
+      <div class="notes-lines">
+        <div class="note-line"></div>
+        <div class="note-line"></div>
+        <div class="note-line"></div>
+        <div class="note-line"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
